@@ -9,17 +9,30 @@ const User = ({
     followers,
     following,
     location,
+    bio,
+    name,
     }:userProps) => {
+
   return (
     <Container>
       <img src={avatar_url} alt={login} />
       <h2>{login}</h2>
+        <p style={{
+            marginTop: '-25px',
+            borderBottom: '2px solid white', 
+            paddingBottom:'10px', 
+            width: '60%'}}>
+            {name}
+        </p>
       {location && (
       <p>
         <MdLocationPin />
         {location}
       </p>
       )}
+        <p>
+            {bio}
+        </p>
       <UserNetworking>
         <div>
             <p>Seguidores:</p>
@@ -29,7 +42,6 @@ const User = ({
             <p>Seguidores:</p>
             <p><span>{following}</span></p>
         </div>
-
       </UserNetworking>
         <Link to={`/repos/${login}`}>Ver Melhores Projetos</Link>
     </Container>

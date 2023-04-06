@@ -4,9 +4,6 @@ export type userProps = {
     location: string,
     followers: number,
     following: number,
+    bio: string;
+    name: string;
 }
-
-export interface TypedTextProps {
-    text: string;
-}
-  
