@@ -10,6 +10,7 @@ const User = ({
     location,
     bio,
     name,
+    public_repos,
     }:userProps) => {
 
   return (
@@ -33,6 +34,10 @@ const User = ({
             {bio}
         </p>
       <UserNetworking>
+        <div style={{borderRight: '2px solid gray'}}>
+            <p>Repositórios:</p>
+            <p><span>{public_repos}</span></p>
+        </div>
         <div>
             <p>Seguidores:</p>
             <p><span>{followers}</span></p>

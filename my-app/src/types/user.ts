@@ -6,4 +6,5 @@ export type userProps = {
     following: number,
     bio: string;
     name: string;
+    public_repos: string;
 }
