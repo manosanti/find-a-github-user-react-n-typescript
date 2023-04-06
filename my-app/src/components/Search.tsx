@@ -24,7 +24,7 @@ const Search = ({ loadUser }: SearchProps) => {
     return (
         <Container>
             <h2>Busque por um usuário:</h2>
-            <p>Conheça seus melhores repositórios</p>
+            <p>Conheça seus melhores repositórios:</p>
             <UserInputSearch>
                 <input
                     type="text"
