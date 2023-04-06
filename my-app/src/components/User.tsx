@@ -47,7 +47,7 @@ const User = ({
             <p><span>{following}</span></p>
         </div>
       </UserNetworking>
-        <a href={`https://github.com/${login}?tab=repositories`} target='_blank'>Ver Melhores Projetos</a>
+        <a href={`https://github.com/${login}`} target='_blank'>Ver no GitHub</a>
     </Container>
   )
 }
