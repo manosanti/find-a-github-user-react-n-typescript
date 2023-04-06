@@ -8,7 +8,7 @@ function App() {
 
   return (
     <Container>
-      <h1><TypedText text="GitHub Finder" /></h1>
+      <h1><TypedText /></h1>
       <Outlet />
     </Container>
   )

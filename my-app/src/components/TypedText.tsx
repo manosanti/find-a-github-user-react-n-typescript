@@ -1,45 +1,29 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import Typed from 'typed.js';
 
-interface TypedTextProps {
-  text: string;
-}
+function TypedText() {
+  // Create reference to store the DOM element containing the animation
+  const el = React.useRef(null);
 
-function TypedText({ text }: TypedTextProps) {
-  const typedTextRef = useRef<HTMLSpanElement>(null);
-  const typedRef = useRef<Typed | null>(null);
-
-  useEffect(() => {
-    const options = {
-      strings: [text],
-      typeSpeed: 50,
-      backSpeed: 50,
-    };
-
-    typedRef.current = new Typed(typedTextRef.current!, options);
+  React.useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ['GitHub Finder'],
+      typeSpeed: 70,
+      backSpeed: 70,
+      loop: true,
+    });
 
     return () => {
-      if (typedRef.current) {
-        typedRef.current.destroy();
-      }
-    };
-  }, [text]);
-
-  useEffect(() => {
-    return () => {
-      if (typedRef.current) {
-        typedRef.current.destroy();
-      }
+      // Destroy Typed instance during cleanup to stop animation
+      typed.destroy();
     };
   }, []);
 
-  const resetTyped = () => {
-    if (typedRef.current) {
-      typedRef.current.reset();
-    }
-  };
-
-  return <span ref={typedTextRef} onClick={resetTyped} />;
+  return (
+    <div className="App">
+      <span ref={el} />
+    </div>
+  );
 }
 
-export default TypedText;
+export default TypedText
