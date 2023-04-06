@@ -1,6 +1,5 @@
 import { userProps } from '../types/user'
 import { MdLocationPin } from 'react-icons/md'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const User = ({
@@ -43,7 +42,7 @@ const User = ({
             <p><span>{following}</span></p>
         </div>
       </UserNetworking>
-        <Link to={`/repos/${login}`}>Ver Melhores Projetos</Link>
+        <a href={`https://github.com/${login}?tab=repositories`} target='_blank'>Ver Melhores Projetos</a>
     </Container>
   )
 }
