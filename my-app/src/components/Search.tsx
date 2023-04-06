@@ -19,7 +19,6 @@ const Search = ({ loadUser }: SearchProps) => {
     <Container>
       <h2>Busque por um usuário:</h2>
       <p>Conheça seus melhores repositórios</p>
-
       <UserInputSearch>
         <input
             type="text"
