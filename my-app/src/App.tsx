@@ -14,11 +14,13 @@ function App() {
 export default App
 
 const Container = styled.div`
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
 
   h1 {
+    font-size: 70px;
+    color: white;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 `
