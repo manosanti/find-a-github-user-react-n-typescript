@@ -1,11 +1,14 @@
+import React from 'react';
 import './App.css'
 import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
+import TypedText from './components/TypedText';
 
 function App() {
+
   return (
     <Container>
-      <h1>GitHub Finder</h1>
+      <h1><TypedText text="GitHub Finder" /></h1>
       <Outlet />
     </Container>
   )

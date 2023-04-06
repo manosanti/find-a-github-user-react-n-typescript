@@ -5,3 +5,8 @@ export type userProps = {
     followers: number,
     following: number,
 }
+
+export interface TypedTextProps {
+    text: string;
+}
+  
