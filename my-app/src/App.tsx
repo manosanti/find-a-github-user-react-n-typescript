@@ -1,15 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Outlet } from 'react-router-dom'
+import styled from 'styled-components'
 
 function App() {
-
   return (
-    <div className="App">
+    <Container>
       <h1>GitHub Finder</h1>
-    </div>
+      <Outlet />
+    </Container>
   )
 }
 
 export default App
+
+const Container = styled.div`
+  max-width: 500px;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+`
