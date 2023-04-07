@@ -1,53 +1,74 @@
-import { userProps } from '../types/user'
-import { MdLocationPin } from 'react-icons/md'
-import styled from 'styled-components'
+import { userProps } from '../types/user' // Importa os tipos definidos para as props do componente
+import { MdLocationPin } from 'react-icons/md' // Importa o ícone de localização do pacote react-icons
+import styled from 'styled-components' // Importa o pacote styled-components para definir estilos CSS
 
+// Define as props do componente usando a sintaxe de desestruturação
 const User = ({
-    login,
-    avatar_url,
-    followers,
-    following,
-    location,
-    bio,
-    name,
-    public_repos,
-    }:userProps) => {
+  login,
+  avatar_url,
+  followers,
+  following,
+  location,
+  bio,
+  name,
+  public_repos, // adicionado a propriedade de repositórios públicos
+}: userProps) => {
 
+  // Retorna a estrutura do componente com o conteúdo dinâmico
   return (
     <Container>
       <img src={avatar_url} alt={login} />
       <h2>{login}</h2>
-        <p style={{
-            marginTop: '-25px',
-            borderBottom: '2px solid white', 
-            paddingBottom:'10px', 
-            width: '60%'}}>
-            {name}
-        </p>
-      {location && (
-      <p>
-        <MdLocationPin />
-        {location}
+
+      {/* Renderiza o nome do usuário em uma tag <p> */}
+      <p
+        style={{
+          marginTop: '-25px',
+          borderBottom: '2px solid white',
+          paddingBottom: '10px',
+          width: '60%',
+        }}
+        >
+        {name}
       </p>
-      )}
+
+      {/* Renderiza a localização do usuário com o ícone de localização */}
+      {location && (
         <p>
-            {bio}
+          <MdLocationPin />
+          {location}
         </p>
+      )}
+
+      {/* Renderiza a bio do usuário em uma tag <p> */}
+      <p>{bio}</p>
+
+      {/* Renderiza o número de repositórios públicos, seguidores e usuários seguidos */}
       <UserNetworking>
-        <div style={{borderRight: '2px solid gray'}}>
-            <p>Repositórios:</p>
-            <p><span>{public_repos}</span></p>
+        <div style={{ borderRight: '2px solid gray' }}>
+          <p>Repositórios:</p>
+          <p>
+            <span>{public_repos}</span>
+          </p>
         </div>
         <div>
-            <p>Seguidores:</p>
-            <p><span>{followers}</span></p>
+          <p>Seguidores:</p>
+          <p>
+            <span>{followers}</span>
+          </p>
         </div>
         <div>
-            <p>Seguidores:</p>
-            <p><span>{following}</span></p>
+          <p>Seguindo:</p>
+          <p>
+            <span>{following}</span>
+          </p>
         </div>
       </UserNetworking>
-        <a href={`https://github.com/${login}`} target='_blank'>Ver no GitHub</a>
+
+      {/* Renderiza um link que abre o perfil do usuário no GitHub em outra aba */}
+      <a href={`https://github.com/${login}`} target="_blank">
+        Ver no GitHub
+      </a>
     </Container>
   )
 }
